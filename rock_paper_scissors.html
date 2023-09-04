@@ -29,7 +29,7 @@
       let randomNumber = '';
       let result = '';
 
-      const resultCounter = {
+      const score = {
         wins: 0,
         losses: 0,
         ties: 0
@@ -57,56 +57,56 @@
         if(playerMove === 'scissors'){
           if (computerMove === 'rock'){
             result = 'You lose.';
-            resultCounter.losses ++;
           }
           else if(computerMove === 'paper'){
             result = 'You win.';
-            resultCounter.wins ++;
           }
           else{
             result = 'Tie.';
-            resultCounter.ties ++;
           }
         }
 
         else if(playerMove === 'rock'){
           if (computerMove === 'rock'){
             result = 'Tie.';
-            resultCounter.ties ++;
           }
           else if(computerMove === 'paper'){
             result = 'You lose.';
-            resultCounter.losses ++;
           }
           else{
             result = 'You win.';
-            resultCounter.wins ++;
           }
         }
 
         else{
           if (computerMove === 'rock'){
             result = 'You win.';
-            resultCounter.wins ++;
           }
           else if(computerMove === 'paper'){
             result = 'Tie.';
-            resultCounter.ties ++;
           }
           else{
             result = 'You lose.';
-            resultCounter.losses ++;
           }
         }
 
-        
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result} \nWins: ${resultCounter.wins}, Losses: ${resultCounter.losses}, Ties: ${resultCounter.ties}`)
+        if (result === 'You win.'){
+          score.wins ++;
+        }
+        else if (result === 'You lose.'){
+          score.losses ++;
+        }
+        else{
+          score.ties ++;
+        }
+
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result} \nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
       }
       
       function resetScores(){
-        resultCounter.wins = 0;
-        resultCounter.losses = 0;
-        resultCounter.ties = 0;
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
       }
     </script>
 
