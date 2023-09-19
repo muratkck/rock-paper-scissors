@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rock Paper Scissors(10)</title>
+    <link
+    class="title_picture"
+    rel="icon"
+    type="image/png"
+    
+    href="images/indir.png"
+  />
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="rock_paper_scissors.css">
 
   </head>
   <body>
     <p class="title">Rock Paper Scissors</p>
 
-    <button class="move_button"
-      onclick="
-      playGame('rock');
-    ">   
+    <button class="move_button rock_button">   
     <img class="move_icon" src="images/rock-emoji.png"></button>
 
-    <button class="move_button"
-      onclick="
-      playGame('paper');
-    ">
-    <img class="move_icon" src="images/paper-emoji.png">
-    </button>
+    <button class="move_button paper_button">
+    <img class="move_icon" src="images/paper-emoji.png"></button>
 
-    <button class="move_button"
-      onclick="
-      playGame('scissors');
-    ">
-    <img class="move_icon" src="images/scissors-emoji.png">
-    </button>
+    <button class="move_button scissors_button">
+    <img class="move_icon" src="images/scissors-emoji.png"></button>
 
     <p class="js_result"></p>
     <p class="js_choices"></p>
     <p class="js_score"></p>
 
-    <button class="reset_button"
-      onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElements();
-    "
-    >
+    <button class="reset_button js_reset_button">
       Reset Score
+    </button>
+    
+    <button class="auto_play_button js_auto_play_button">
+      Auto Play
     </button>
 
     <script src="rock_paper_scissors.js"></script>
